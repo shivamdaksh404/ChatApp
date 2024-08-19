@@ -7,7 +7,7 @@ import theme from "./theme";
 import router from "./routes/Routes.jsx";
 import { io } from 'socket.io-client';
 import { AppContext } from "./utils/CustomHooks.js"; 
-export const socket = io.connect("http://localhost:3000");
+export const socket = io.connect("http://localhost:3001");
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -106,13 +106,13 @@ const cors = require('cors');
 const { Server } = require('socket.io');
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'dist'))); // Serve static files from 'dist'
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'dist'
 
 // Set up Socket.io
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173", // Adjust as needed
+        origin: "https://chat.algrowthm.solutions/", // Adjust as needed
         methods: ["GET", "POST"],
     },
 });
@@ -147,6 +147,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-server.listen(3000, () => {
-    console.log('Server is running on port 3000');
+server.listen(3001, () => {
+    console.log('Server is running on port 3001');
 });
